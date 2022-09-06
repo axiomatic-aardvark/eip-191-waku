@@ -1,1 +1,1 @@
-# eip-919-waku
+# eip-191-waku
