@@ -1,0 +1,26 @@
+{
+  "name": "waku-basic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bytes32": "^0.0.3",
+    "dotenv": "^16.0.2",
+    "ethereum-private-key-to-public-key": "^0.0.5",
+    "ethereum-public-key-to-address": "^0.0.5",
+    "ethers": "^5.7.0",
+    "js-base64": "^3.7.2",
+    "js-waku": "^0.24.0",
+    "keccak256": "^1.0.6",
+    "protobufjs": "^7.1.0",
+    "protons": "^5.1.0",
+    "text-encoding": "^0.7.0",
+    "uint8arrays": "^3.1.0"
+  }
+}
