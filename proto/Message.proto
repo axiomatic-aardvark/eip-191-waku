@@ -3,4 +3,5 @@ package gossip;
 
 message Message {
     string text = 1;
+    string signature = 2;
 }
