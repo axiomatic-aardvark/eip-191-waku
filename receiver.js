@@ -1,5 +1,7 @@
 const { Waku } = require("js-waku");
 const protobuf = require("protobufjs");
+const { ethers, Wallet } = require("ethers");
+const { fromString } = require("uint8arrays/from-string");
 
 const MESSAGE_TOPIC = "/relay-sample/0.1/chat/proto";
 
@@ -25,6 +27,7 @@ const run = async () => {
 
         message = Message.toObject(decodedMessage, {
           text: String,
+          signature: String,
         });
       } catch (error) {
         console.error(
@@ -33,8 +36,20 @@ const run = async () => {
         return;
       }
 
-      const { text } = message;
-      console.log("Decoded from protobuf " + text);
+      const { text, signature } = message;
+      console.log("Decoded text " + text);
+      console.log("Decoded signature " + signature);
+
+      const address = ethers.utils.verifyMessage(
+        fromString(
+          JSON.stringify({
+            text: "Here is the text I want to send",
+          })
+        ),
+        signature
+      );
+
+      console.log("address " + address);
     });
   };
 
